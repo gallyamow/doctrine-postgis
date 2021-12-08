@@ -13,6 +13,11 @@ class GeographyType extends PostGISType
         return PostGISType::GEOGRAPHY;
     }
 
+    public function convertToPHPValue($value, AbstractPlatform $platform)
+    {
+        return json_decode($value, true, 512);
+    }
+
     public function convertToDatabaseValueSQL($sqlExpr, AbstractPlatform $platform): string
     {
         return sprintf('ST_GeomFromGeoJSON(%s)', $sqlExpr);

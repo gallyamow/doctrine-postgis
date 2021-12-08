@@ -23,7 +23,8 @@
     ],
     "require": {
         "php": "7.0",
-        "doctrine/dbal": "^2.13 || ^3.1"
+        "doctrine/dbal": "^2.13 || ^3.1",
+        "ext-json": "*"
     },
     "require-dev": {
         "doctrine/orm": "^2.9",
