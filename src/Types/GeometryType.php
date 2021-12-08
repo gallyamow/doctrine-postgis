@@ -16,6 +16,7 @@ class GeometryType extends PostGISType
         return [
             'geometry_type' => strtoupper($options['geometry_type'] ?? 'GEOMETRY'),
             'srid' => (int) ($options['srid'] ?? 0),
+            'display_type' => $options['display_type'] ?? 'wkt',
         ];
     }
 }

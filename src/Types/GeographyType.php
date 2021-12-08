@@ -15,7 +15,7 @@ class GeographyType extends PostGISType
 
     public function convertToDatabaseValueSQL($sqlExpr, AbstractPlatform $platform): string
     {
-        return sprintf('ST_GeographyFromText(%s)', $sqlExpr);
+        return sprintf('ST_GeomFromGeoJSON(%s)', $sqlExpr);
     }
 
     public function getNormalizedPostGISColumnOptions(array $options = []): array
